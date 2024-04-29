@@ -291,7 +291,7 @@ body {
 .main__text {
   text-align: center;
   line-height: 130%;
-  letter-spacing: 12;
+  letter-spacing: 12px;
 }
 
 .main__text:not(:last-child) {
