@@ -1,0 +1,369 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather:regular,italic&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Golos+Text:regular,5000&display=swap");
+
+/*Обнуление*/
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  line-height: 1;
+}
+
+button,
+input {
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+  background-color: inherit;
+  line-height: inherit;
+}
+
+/*---------------------*/
+:root {
+  --mainColor: #313131;
+  /* Основной цвет */
+  --secontColor: #ffff;
+  /* Вторичный цвет */
+  --redColor: #f54932;
+  --yellowColor: #fbce51;
+}
+
+body {
+  font-family: "GolosText";
+  font-size: 18px;
+}
+
+[class*="__container"] {
+  max-width: 1252px;
+  /**ограничивающий контейнер + отступы*/
+  margin: 0 auto;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+}
+
+._ibg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+._ibg img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: clip;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  flex-grow: 1;
+}
+
+.button {
+  font-family: "Montserrat";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 120%;
+  padding: 16px 49px;
+  min-width: 263px;
+  border: 1px solid #1f1f1f;
+  color: #303030;
+  border-radius: 40px;
+  text-align: center;
+  transition: all 0.5s;
+}
+
+.button:hover {
+  background-color: #1f1f1f;
+  color: var(--secontColor);
+  border: 1px solid #1f1f1f;
+}
+
+@media (max-width: 575px) {
+  .button {
+    width: 100%;
+  }
+}
+
+.button--black {
+  color: var(--secontColor);
+  border: 1px solid #1f1f1f;
+  background-color: #1f1f1f;
+}
+
+.button--black:hover {
+  color: #1f1f1f;
+  border: none;
+  background-color: var(--yellowColor);
+}
+
+@media (max-width: 1050px) {
+  .button--white {
+    background: rgba(255, 255, 255, 0.9);
+
+    /* Если браузер поддерживает backdrop-filter */
+    @supports ((-webkit-backdrop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(31px);
+      border: none;
+      opacity: 0.89;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  br {
+    display: none;
+  }
+}
+
+/*-------Header------*/
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.header-background {
+  background: rgba(255, 255, 255, 0.9);
+
+  /* Если браузер поддерживает backdrop-filter */
+  @supports ((-webkit-backdrop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(31px);
+  }
+}
+
+.header__container {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  padding-top: 26px;
+  padding-bottom: 26px;
+}
+
+.header__logo {
+  overflow: hidden;
+}
+
+/*-------Main------*/
+.page__main {}
+
+.main {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background: #e9ded4;
+}
+
+.main::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/main/bg.webp") 0 0 / cover;
+  opacity: 0.2;
+}
+
+.main__container-max {
+  max-width: 1664px;
+  /**ограничивающий контейнер + отступы*/
+  margin: 0 auto;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 5;
+  background-image: url("../img/main/Group_17.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+
+@media (max-width: 1366px) {
+  .main__container-max {
+    background-image: url("../img/main/group_1366.webp");
+    background-size: contain;
+    background-position: center bottom;
+  }
+}
+
+@media (max-width: 375px) {
+  .main__container-max {
+    min-height: 812px;
+  }
+
+  .main__container-max {
+    background-image: url("../img/main/group_375.webp");
+    background-size: contain;
+    background-position: center bottom;
+  }
+}
+
+.main__container {
+  position: relative;
+  z-index: 2;
+  min-height: 100%;
+  padding-top: 124px;
+  padding-bottom: 132px;
+}
+
+.main__content {
+  position: relative;
+  z-index: 2;
+  max-width: 542px;
+}
+
+.main__title {
+  text-transform: uppercase;
+  font-family: "Merriweather";
+  font-size: 60px;
+}
+
+.main__title:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.main__title p:first-child {
+  text-align: center;
+}
+
+.main__title p:nth-child(2) {
+  text-align: end;
+}
+
+.main__text {
+  text-align: center;
+  line-height: 130%;
+  letter-spacing: 12;
+}
+
+.main__text:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.main__actions {
+  display: flex;
+  gap: 16px;
+}
+
+@media (max-width: 575px) {
+  .main__actions {
+    flex-wrap: wrap;
+  }
+}
+
+.page__ticker {}
+
+.ticker {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 18px 0;
+  background-color: #f54932;
+  z-index: 10;
+}
+
+.ticker__body {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.ticker__list {}
+
+.list-ticker {
+  display: flex;
+  align-items: center;
+}
+
+.list-ticker__text {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 110%;
+  text-transform: uppercase;
+  color: #fff;
+  align-self: center;
+}
+
+.list-ticker__text::after {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 12px;
+  margin-left: 12px;
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+/*---------------------------*/
+@media (max-width: 1366px) {}
